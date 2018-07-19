@@ -38,11 +38,8 @@ public class HelloWorld implements HasLogger {
 
       Grid<Person> grid = new Grid<>(Person.class);
 
-      BackEndDataProvider<Person, Filter> dataProvider = new DemoDataProvider();
-      grid.setDataProvider(dataProvider
-                               .withConfigurableFilter());
+      grid.setDataProvider(new DemoDataProvider().withConfigurableFilter());
       grid.setFooterVisible(false);
-
       grid.setHeaderVisible(true);
       grid.setColumnResizeMode(ColumnResizeMode.SIMPLE);
       grid.setHeightMode(HeightMode.ROW);
